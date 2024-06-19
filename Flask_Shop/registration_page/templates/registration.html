@@ -1,1 +1,65 @@
+{% extends 'base.html' %}
 
+{% block title %}
+    Registration
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/registration_page/css/registration.css">
+{% endblock %}
+
+{% block content %}
+<div><a href="/registration/">REGISTRATION</a><br/></div>
+<div class = "login_form">
+    <form method="post">
+        <div class = "login_text">Login</div>
+        <input id = "login_input" class="input_login" type= "text" name= "login" onkeyup="checkPasswords()">
+        <div class = "login_text">Email</div>
+        <input id = "email_input" class="input_login" type="text" name= "email"onkeyup=" checkPasswords()">
+        <div class = "login_text">Password</div>
+        <input  id="pass1_input" class="input_login" type="text" name="password" onkeyup="checkPasswords()">
+        <div class = "login_text">Password confirmation</div>
+        <input  id="pass2_input" class="input_login" type="text" name="password_confirmation" onkeyup="checkPasswords()">
+        <div></div>
+        <button id="showPopup" class = "button_login" type="submit" onclick="login_button">SEND</button>
+    </form>
+</div>
+<div id="popup" class="popup">
+    CONFIRMED
+    <a href="/login/" class="AUTHORIZATION">AUTHORIZATION</a>
+</div>
+<script>
+    var login_button = document.getElementById('showPopup');
+    login_button.disabled = true;
+
+    login_button.addEventListener('click', function(event) {
+        var popup = document.getElementById('popup');
+        popup.style.display = 'block';
+        event.preventDefault();
+    });
+
+    var login_input = document.getElementById('login_input');
+    var email_input = document.getElementById('email_input');
+    var pass1_input = document.getElementById('pass1_input');
+    var pass2_input = document.getElementById('pass2_input');
+
+    var checkPasswords = function()
+    {
+        debugger;
+
+        var err=false;
+        if (this.login_input.value=="" || this.email_input.value=="" )
+        {
+            err=true;
+        }
+
+        if (this.pass1_input.value!=this.pass2_input.value || this.pass1_input.value==undefined || this.pass2_input.value==undefined || this.pass1_input.value=="" || this.pass2_input.value=="")
+        {
+            err=true;
+        }
+        login_button.disabled = err;    
+    }
+
+
+</script>
+{% endblock %}
