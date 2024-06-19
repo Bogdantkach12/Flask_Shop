@@ -1,1 +1,507 @@
+{% extends "base.html" %}
 
+{% block title %}
+    Shop
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/registration_page/css/shop.css">
+{% endblock %}
+
+{% block content %}
+    <a class = "aa" href="/">HOME</a>
+    <a class = "aa2" href="/shop/">SHOP</a>
+    <a class = "aa3" href="/contacts/">CONTACTS</a>
+    <a class = "aa4" href="/cart/">CART</a>
+    {% if is_admin %}
+        <a href="/admin/" class="aa6">ADMIN</a>
+    {% endif %}
+    <a href="/main/" class="aa5">{{ name2 }}</a>
+
+
+    <h1 class = "h" id="phoneTitle">IPHONE 15 PRO MAX 256GB NATURAL TITANIUM</h1>
+
+    <h2 class="price"><del id="phonePrice">52 999 грн</del></h2>
+    <input type="text" class="hide-phone2" id="phoneInput2" placeholder="Введіть нову назву: " onkeypress="checkPhone2(event)">
+    <h2 class="discount" id="phoneDiscount">Знижка 5%</h2>
+    <input type="text" class="hide-phone3" id="phoneInput3" placeholder="Введіть нову назву: " onkeypress="checkPhone3(event)">
+    <h1 class = "h2">49 999 грн</h1>
+    <button onclick="document.cookie = 'phone_cookie=phone_cookie; path = /'; updateCookieCount();" class = "button_buy" type="submit">КУПИТИ</button>
+    <h1 class = "h3">ЄМНІСТЬ:</h1>
+    <button class = "gb" type="submit">256 Гб</button>
+    <button class = "gb2" type="submit">512 Гб</button>
+    <button class = "gb3" type="submit">1 Тб</button>
+    <h1 class="product">ТОВАР В НАЯВНОСТІ</h1>
+    <button id="cookieButton" style="display: none;" class = "counter" type="submit"></button>
+    <img class = "confirm" src="../../static/registration_page/images/confirm.png" alt="">
+    <img class="image" id="phoneImage" src="../../static/registration_page/images/phone.jpg" alt="">
+    <input type="file" id="imageInput3" class="hide-image" onchange="uploadImage3(event)">
+    <p> <span id="cookieCount" style="display: none;">1</span></p>
+    <div class="vertical-line"></div>
+    <div class="vertical-line2"></div>
+
+    <script>
+        function getCookieCount() {
+            var cookies = document.cookie.split(';').filter(function(cookie) {
+                return cookie.trim() !== "";
+            });
+            return cookies.length;
+        }
+
+        function updateCookieCount() {
+            var cookieCount = getCookieCount();
+            var countSpan = document.getElementById('cookieCount');
+            var countButton = document.getElementById('cookieButton');
+
+            if (cookieCount >= 1 && cookieCount <= 10) {
+                if (countSpan) {
+                    countSpan.textContent = cookieCount;
+                    countSpan.style.display = 'inline';
+                    countButton.style.display = 'inline';
+                }
+            } else {
+                if (countSpan) {
+                    countSpan.style.display = 'none';
+                    countButton.style.display = 'none';
+                }
+            }
+        }
+
+        window.onload = updateCookieCount;
+        function showPhone() {
+            document.getElementById("phoneTitle").style.display = 'none';
+            document.getElementById("phoneInput").style.display = 'inline';
+            document.getElementById("phoneInput").focus();
+        }
+
+        // Функция для проверки нажатия клавиши Enter
+        function checkPhone(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById('phoneInput').value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("phoneTitle").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("phoneTitle", userInput);
+                }
+                document.getElementById("phoneTitle").style.display = 'block';
+                document.getElementById('phoneInput').style.display = 'none';
+            }
+        }
+
+        // Загрузка сохранённого текста при загрузке страницы
+        window.onload = function() {
+            const phoneTitle = localStorage.getItem("phoneTitle");
+            if (phoneTitle) {
+                document.getElementById("phoneTitle").innerText = phoneTitle;
+            }
+        }
+        function showPhonePrice() {
+            document.getElementById("phonePrice").style.display = 'none';
+            document.getElementById('phoneInput2').style.display = 'inline';
+            document.getElementById('phoneInput2').focus();
+
+        }
+        function checkPhone2(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById('phoneInput2').value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("phonePrice").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("phonePrice", userInput);
+                }
+                document.getElementById("phonePrice").style.display = 'block';
+                document.getElementById('phoneInput2').style.display = 'none';
+            }
+        }
+        function showPhoneDiscount() {
+            document.getElementById('phoneDiscount').style.display = 'none';
+            document.getElementById("phoneInput3").style.display = 'inline';
+            document.getElementById("phoneInput3").focus();
+        }
+        function checkPhone3(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById("phoneInput3").value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("phoneDiscount").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("phoneDiscount", userInput);
+                }
+                document.getElementById("phoneDiscount").style.display = 'block';
+                document.getElementById("phoneInput3").style.display = 'none';
+            }
+        }
+       
+        function uploadImage3(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                document.getElementById("phoneImage").src = imageUrl;
+                localStorage.setItem("phoneImage", imageUrl);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        // Загрузка сохранённых данных при загрузке страницы
+        window.onload = function() {
+            const phoneTitle = localStorage.getItem('phoneTitle');
+            if (phoneTitle) {
+                document.getElementById("productTitle").innerText = phoneTitle;
+            }
+
+            const phonePrice = localStorage.getItem('phonePrice');
+            if (phonePrice) {
+                document.getElementById("phonePrice").innerText = phonePrice;
+            }
+            const phoneDiscount = localStorage.getItem('phoneDiscount');
+            if (phoneDiscount) {
+                document.getElementById("phoneDiscount").innerText = phoneDiscount;
+            }
+
+            const phoneImage = localStorage.getItem('phoneImage');
+            if (phoneImage) {
+                document.getElementById("phoneImage").src = phoneImage;
+            }
+        }
+    </script>
+
+
+    <h1 class = "h4"  id = "mackbookTitle">APPLE MACBOOK PRO 13" SPACE GRAY M2 16/512</h1>
+    <input type="text" class = "hidden5"  id = "mackbookInput" placeholder="Введіть нову назву: " onkeypress="checkButton(event)">
+    <h2 class="price2"><del  id="mackbookPrice">56 800 грн</del></h2>
+    <input class="hidden6" type="text" id="mackbookInput2" onkeypress="checkButton2(event)">
+    <h2 class="discount2" id="mackbookDiscount">Знижка 3%</h2>
+    <input class="hidden8" type="text" id="mackbookInput3" onkeypress="checkButton3(event)">
+    <h1 class = "h5">54 999 грн</h1>
+    <button onclick = "document.cookie = 'laptop_cookie=laptop_value; path = /'; updateCookieCount();" class = "button_buy2" type="submit">КУПИТИ</button>
+    <h1 class = "h10">ЄМНІСТЬ:</h1>
+    <button class = "gb4" type="submit">256 Гб</button>
+    <button class = "gb5" type="submit">512 Гб</button>
+    <button class = "gb6" type="submit">1 Тб</button>
+    <h1 class="product2">ТОВАР В НАЯВНОСТІ</h1>
+    <img class = "confirm2" src="../../static/registration_page/images/confirm.png" alt="">
+    <img class="image2" id="mackbookImage" src="../../static/registration_page/images/laptop.png" alt="">
+    <input type="file" id="imageInput2" class="hidden7" onchange="uploadImage2(event)">
+    <div class="vertical-line3"></div>
+    <div class="vertical-line4"></div>
+    <script>
+        document.querySelector(".gb").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb2 = document.querySelector('.gb2')
+            gb2.style.backgroundColor = 'white';
+            gb3 = document.querySelector('.gb3')
+            gb3.style.backgroundColor = 'white';
+            header = document.querySelector('.h')
+            header.textContent = 'IPHONE 15 PRO MAX 256GB NATURAL TITANIUM';
+        })
+        document.querySelector(".gb2").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb = document.querySelector('.gb')
+            gb.style.backgroundColor = 'white';
+            gb3 = document.querySelector('.gb3')
+            gb3.style.backgroundColor = 'white';
+            header = document.querySelector('.h')
+            header.textContent = 'IPHONE 15 PRO MAX 512GB NATURAL TITANIUM';
+        })
+        document.querySelector(".gb3").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb2 = document.querySelector('.gb2')
+            gb2.style.backgroundColor = 'white';
+            gb = document.querySelector('.gb')
+            gb.style.backgroundColor = 'white';
+            header = document.querySelector('.h')
+            header.textContent = 'IPHONE 15 PRO MAX 1TB NATURAL TITANIUM';
+            
+        })
+        document.querySelector(".gb4").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb5 = document.querySelector('.gb5')
+            gb5.style.backgroundColor = 'white';
+            gb6 = document.querySelector('.gb6')
+            gb6.style.backgroundColor = 'white';
+            header = document.querySelector('.h4')
+            header.textContent = 'APPLE MACBOOK PRO 13" SPACE GRAY M2 8/256';
+        })
+        document.querySelector(".gb5").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb4 = document.querySelector('.gb4')
+            gb4.style.backgroundColor = 'white';
+            gb6 = document.querySelector('.gb6')
+            gb6.style.backgroundColor = 'white';
+            header = document.querySelector('.h4')
+            header.textContent = 'APPLE MACBOOK PRO 13" SPACE GRAY M2 16/512';
+        })
+        document.querySelector(".gb6").addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gb5 = document.querySelector('.gb5')
+            gb5.style.backgroundColor = 'white';
+            gb4 = document.querySelector('.gb4')
+            gb4.style.backgroundColor = 'white';
+            header = document.querySelector('.h4')
+            header.textContent = 'APPLE MACBOOK PRO 13" SPACE GRAY M2 24/1TB ';
+        })
+
+
+
+
+        function showMacbook() {
+            document.getElementById("mackbookTitle").style.display = 'none';
+            document.getElementById("mackbookInput").style.display = 'inline';
+            document.getElementById("mackbookInput").focus();
+        }
+
+        // Функция для проверки нажатия клавиши Enter
+        function checkButton(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById("mackbookInput").value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("mackbookTitle").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("mackbookTitle", userInput);
+                }
+                document.getElementById("mackbookTitle").style.display = 'block';
+                document.getElementById("mackbookInput").style.display = 'none';
+            }
+        }
+
+        // Загрузка сохранённого текста при загрузке страницы
+        window.onload = function() {
+            const savedTitle = localStorage.getItem("mackbookTitle");
+            if (savedTitle) {
+                document.getElementById("mackbookTitle").innerText = savedTitle;
+            }
+        }
+        function showMacbookPrice() {
+            document.getElementById("mackbookPrice").style.display = 'none';
+            document.getElementById('mackbookInput2').style.display = 'inline';
+            document.getElementById('mackbookInput2').focus();
+
+        }
+        function checkButton2(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById('mackbookInput2').value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("mackbookPrice").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("mackbookPrice", userInput);
+                }
+                document.getElementById("mackbookPrice").style.display = 'block';
+                document.getElementById('mackbookInput2').style.display = 'none';
+            }
+        }
+        function showMackbookDiscount() {
+            document.getElementById('mackbookDiscount').style.display = 'none';
+            document.getElementById("mackbookInput3").style.display = 'inline';
+            document.getElementById("mackbookInput3").focus();
+        }
+        function checkButton3(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById("mackbookInput3").value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("mackbookDiscount").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem("mackbookDiscount", userInput);
+                }
+                document.getElementById("mackbookDiscount").style.display = 'block';
+                document.getElementById("mackbookInput3").style.display = 'none';
+            }
+        }
+       
+        function uploadImage2(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                document.getElementById("mackbookImage").src = imageUrl;
+                localStorage.setItem("mackbookImage", imageUrl);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        // Загрузка сохранённых данных при загрузке страницы
+        window.onload = function() {
+            const savedTitle = localStorage.getItem('productTitle');
+            if (savedTitle) {
+                document.getElementById("productTitle").innerText = savedTitle;
+            }
+
+            const savedPrice = localStorage.getItem('productPrice');
+            if (savedPrice) {
+                document.getElementById("productPrice").innerText = savedPrice;
+            }
+            const savedDiscount = localStorage.getItem('productDiscount');
+            if (savedDiscount) {
+                document.getElementById("productDiscount").innerText = savedDiscount;
+            }
+
+            const savedImage = localStorage.getItem('productImage');
+            if (savedImage) {
+                document.getElementById("productImage").src = savedImage;
+            }
+        }
+    </script>
+
+    <h1 class="h6" id="productTitle">APPLE WATCH ULTRA 49MM TITANIUM</h1>
+    <input type="text" id="userInput" class="hidden" placeholder="Введите новый текст" onkeypress="checkEnter(event)">
+    <h2 class="price3"><del id="productPrice">30 999 грн</del></h2>
+    <input type="text" id="priceInput" class="hidden2" placeholder="Введите новую цену" onkeypress="checkEnter2(event)">
+    <h2 class="discount3" id="productDiscount">Знижка 6%</h2>
+    <input type="text" id="discountInput" class="hidden3" placeholder="Введите новую скидку" onkeypress="checkEnter3(event)">
+    <h1 class = "h7">28 999 грн</h1>
+    <button onclick="document.cookie = 'watch_cookie=watch_value; path = /'; updateCookieCount();" class = "button_buy3" type="submit">КУПИТИ</button>
+    <h1 class = "h11">КОЛІР:</h1>
+    <button class = "gb7" type="submit">ORANGE</button>
+    <div class="vertical-line5"></div>
+    <div class="vertical-line6"></div>
+    <script>
+        document.querySelector('.gb7').addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gray = document.querySelector('.gb9')
+            gray.style.backgroundColor = 'white';
+            giga = document.querySelector('.gb8')
+            giga.style.backgroundColor = 'white';
+            document.querySelector('.image3').setAttribute('src', '../../static/registration_page/images/watch.jpeg')
+        });
+        function showInput() {
+            document.getElementById("productTitle").style.display = 'none';
+            document.getElementById("userInput").style.display = 'inline';
+            document.getElementById("userInput").focus();
+        }
+
+        // Функция для проверки нажатия клавиши Enter
+        function checkEnter(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById("userInput").value;
+                if (userInput.trim() !== "") {
+                    document.getElementById("productTitle").innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem('productTitle', userInput);
+                }
+                document.getElementById("productTitle").style.display = 'block';
+                document.getElementById("userInput").style.display = 'none';
+            }
+        }
+
+        // Загрузка сохранённого текста при загрузке страницы
+        window.onload = function() {
+            const savedTitle = localStorage.getItem('productTitle');
+            if (savedTitle) {
+                document.getElementById("productTitle").innerText = savedTitle;
+            }
+        }
+        function showPrice() {
+            document.getElementById('productPrice').style.display = 'none';
+            document.getElementById('priceInput').style.display = 'inline';
+            document.getElementById('priceInput').focus();
+
+        }
+        function checkEnter2(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById('priceInput').value;
+                if (userInput.trim() !== "") {
+                    document.getElementById('productPrice').innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem('productPrice', userInput);
+                }
+                document.getElementById('productPrice').style.display = 'block';
+                document.getElementById('priceInput').style.display = 'none';
+            }
+        }
+        function showDiscount() {
+            document.getElementById('productDiscount').style.display = 'none';
+            document.getElementById("discountInput").style.display = 'inline';
+            document.getElementById("discountInput").focus();
+        }
+        function checkEnter3(event) {
+            if (event.key === "Enter") {
+                const userInput = document.getElementById('discountInput').value;
+                if (userInput.trim() !== "") {
+                    document.getElementById('productDiscount').innerText = userInput;
+                    // Сохранение текста в localStorage
+                    localStorage.setItem('productDiscount', userInput);
+                }
+                document.getElementById('productDiscount').style.display = 'block';
+                document.getElementById('discountInput').style.display = 'none';
+            }
+        }
+       
+        function uploadImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                document.getElementById('productImage').src = imageUrl;
+                localStorage.setItem('productImage', imageUrl);
+            }
+            reader.readAsDataURL(file);
+        }
+
+        // Загрузка сохранённых данных при загрузке страницы
+        window.onload = function() {
+            updateCookieCount();
+
+            const phoneTitle = localStorage.getItem("phoneTitle");
+            if (phoneTitle) document.getElementById("phoneTitle").innerText = phoneTitle;
+
+            const phonePrice = localStorage.getItem("phonePrice");
+            if (phonePrice) document.getElementById("phonePrice").innerText = phonePrice;
+
+            const phoneDiscount = localStorage.getItem("phoneDiscount");
+            if (phoneDiscount) document.getElementById("phoneDiscount").innerText = phoneDiscount;
+
+            const phoneImage = localStorage.getItem("phoneImage");
+            if (phoneImage) document.getElementById("phoneImage").src = phoneImage;
+
+            const macbookTitle = localStorage.getItem("mackbookTitle");
+            if (macbookTitle) document.getElementById("mackbookTitle").innerText = macbookTitle;
+
+            const macbookPrice = localStorage.getItem("mackbookPrice");
+            if (macbookPrice) document.getElementById("mackbookPrice").innerText = macbookPrice;
+
+            const macbookDiscount = localStorage.getItem("mackbookDiscount");
+            if (macbookDiscount) document.getElementById("mackbookDiscount").innerText = macbookDiscount;
+
+            const macbookImage = localStorage.getItem("mackbookImage");
+            if (macbookImage) document.getElementById("mackbookImage").src = macbookImage;
+
+            const productTitle = localStorage.getItem('productTitle');
+            if (productTitle) document.getElementById("productTitle").innerText = productTitle;
+
+            const productPrice = localStorage.getItem('productPrice');
+            if (productPrice) document.getElementById("productPrice").innerText = productPrice;
+
+            const productDiscount = localStorage.getItem('productDiscount');
+            if (productDiscount) document.getElementById("productDiscount").innerText = productDiscount;
+
+            const productImage = localStorage.getItem('productImage');
+            if (productImage) document.getElementById("productImage").src = productImage;
+        }
+    </script>
+    <button class = "gb8" type="submit">BLACK</button>
+    <script>
+        document.querySelector('.gb8').addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gray = document.querySelector('.gb9')
+            gray.style.backgroundColor = 'white';
+            sigma = document.querySelector('.gb7')
+            sigma.style.backgroundColor = 'white';
+            document.querySelector('.image3').setAttribute('src', '../../static/registration_page/images/black.jpg')
+        });
+    </script>
+    <button class = "gb9" type="submit">WHITE</button>
+    <script>
+        document.querySelector('.gb9').addEventListener('click', function() {
+            this.style.backgroundColor = '#EFCB4A';
+            gray = document.querySelector('.gb8')
+            gray.style.backgroundColor = 'white';
+            sigma = document.querySelector('.gb7')
+            sigma.style.backgroundColor = 'white';
+            document.querySelector('.image3').setAttribute('src', '../../static/registration_page/images/gray.jpg');
+        });
+    </script>
+    <h1 class="product3">ТОВАР В НАЯВНОСТІ</h1>
+    <img class = "confirm3" src="../../static/registration_page/images/confirm.png" alt="">
+    <img class="image3" id="productImage" src="../../static/registration_page/images/gray.jpg" alt="">
+    <input type="file" id="imageInput" class="hidden4" onchange="uploadImage(event)">
+{% endblock %}
