@@ -1,0 +1,112 @@
+h1{
+    font-size: 175px;
+    height: 1em;
+    position: relative; 
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.aa{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-left: 75%;
+    font-size: 30px;
+}
+.aa2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    float: right;
+    font-size: 30px;
+}
+h1{
+    font-size: 175px;
+    height: 1em;
+    position: relative; 
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.aa3{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: 700;
+    margin-left: 8%;
+    font-size: 30px;
+}
+.aa4{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-right: 75%;
+    text-decoration: none;
+    float: right;
+    font-size: 30px;
+}
+.aa5{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    float: right;
+    text-decoration: none;
+    margin-top: -35px;
+    margin-right: 48%;
+    font-size: 30px;
+}
+.aa6{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-right: 7%;
+    text-decoration: none;
+    margin-top: -35px;
+    float: right;
+    font-size: 30px;
+}
+.aa7{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-right: -65%;
+    margin-top: -35px;
+    float: right;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 30px;
+}
+.aa8{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    margin-right: -30%;
+    margin-top: -35px;
+    float: right;
+    text-decoration: none;
+    font-size: 30px;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 37.25%;
+    top: 50%;
+    font-size: 20px;
+    transform: translateY(-1885%);
+}
+.counter{
+    margin-left: 24%;
+    margin-top: -30px;
+    background-color: #EFCB4A;
+    width: 35;
+    height: 35;
+    border: 1px;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 15px;
+    border-style: solid;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-1220%);
+}

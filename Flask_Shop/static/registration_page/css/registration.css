@@ -1,0 +1,67 @@
+a{
+    color: black;
+    float: right;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_form{
+    border-width: 2px;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    text-align: left;
+    padding-left: 58px;
+    margin-top: 165px;
+    margin-left: 37%;
+    margin-right: 38%;
+    padding-right: 0px;
+    width: 433;
+    height: 545;
+}
+.button_login{
+    margin-left: 82px;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    padding: 13px;
+    width: 204px;
+    height: 56px;
+    font-size: 24px;
+    cursor: pointer;
+}
+.login_text{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+}
+.input_login{
+    width: 370px;
+    height: 56px;
+    border-radius: 10px;
+}
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+    width: 550px;
+    height: 180px;
+    border: 2px solid black;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 150px;
+    padding-left: 190px;
+    text-align: center;
+    z-index: 9999;
+}
+.AUTHORIZATION{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: 140px;
+}
