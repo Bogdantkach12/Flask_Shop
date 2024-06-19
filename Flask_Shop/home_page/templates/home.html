@@ -1,1 +1,62 @@
+{% extends "base.html" %}
 
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/registration_page/css/static.css">
+{% endblock %}
+
+{% block content %}
+    {% if name %}
+        <a class = "aa3" href="/">HOME</a>
+        <a class = "aa4" href="/shop/">SHOP</a>
+        <a class = "aa5" href="/contacts/">CONTACTS</a>
+        <a class = "aa6" href="/cart/">CART</a>
+        <h1>HOME PAGE</h1>
+        {% if is_admin %}
+            <a href="/admin/" class="aa8">ADMIN</a>
+        {% endif %}
+        <a href="/" class="aa7">{{ name2 }}</a>
+
+        <button id="cookieButton" style="display: none;" class = "counter" type="submit"></button>
+        <p> <span id="cookieCount" style="display: none;">1</span></p>
+        <script>
+            function getCookieCount() {
+                var cookies = document.cookie.split(';').filter(function(cookie) {
+                    return cookie.trim() !== "";
+                });
+                return cookies.length;
+            }
+
+            function updateCookieCount() {
+                var cookieCount = getCookieCount();
+                var countSpan = document.getElementById('cookieCount');
+                var countButton = document.getElementById('cookieButton');
+
+                if (cookieCount >= 1 && cookieCount <= 10) {
+                    if (countSpan) {
+                        countSpan.textContent = cookieCount;
+                        countSpan.style.display = 'inline';
+                        countButton.style.display = 'inline';
+                    }
+                } else {
+                    if (countSpan) {
+                        countSpan.style.display = 'none';
+                        countButton.style.display = 'none';
+                    }
+                }
+            }
+
+            window.onload = updateCookieCount;
+        </script>
+    {% else %}
+        <a class = "aa" href="/registration/">REGISTRATION</a>
+        <a class = "aa2" href="/login/">AUTHORIZATION</a>
+        <h1>HOME PAGE</h1>
+    {% endif %}
+
+    
+{% endblock %}
