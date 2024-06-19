@@ -1,1 +1,499 @@
+{% extends "base.html" %}
 
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="../../static/registration_page/css/cart.css">
+{% endblock %}
+
+{% block content %}
+    <a class = "aa" href="/">HOME</a>
+    <a class = "aa2" href="/shop/">SHOP</a>
+    <a class = "aa3" href="/contacts/">CONTACTS</a>
+    <a class = "aa4" href="/cart/">CART</a>
+    {% if is_admin %}
+        <a href="/admin/" class="aa6">ADMIN</a>
+    {% endif %}
+    <a href="/main/" class="aa5">{{ name2 }}</a>
+    <h1 class="h21" style="display: none;" id="h21">КОРЗИНА ПОРОЖНЯ</h1>
+    <script>
+        window.onload = function() {
+            hidePhoneIfCookieNotExists(); // Проверка наличия файла cookie при загрузке страницы
+        };
+
+        function hidePhoneIfCookieNotExists() {
+            var phoneCookieExists = checkCookie('phone_cookie'); // Проверка наличия файла cookie
+            var image = document.getElementById('image3');
+            var minus = document.getElementById('minus3');
+            var plus = document.getElementById('plus3');
+            var count = document.getElementById('count3');
+            var price = document.getElementById('price3');
+
+            var image2 = document.getElementById('image2');
+            var minus2 = document.getElementById('minus2');
+            var plus2 = document.getElementById('plus2');
+            var count2 = document.getElementById('count2');
+            var price2 = document.getElementById('price2');
+            var div2 = document.getElementById('vertical-line2');
+            
+            if (!phoneCookieExists) {
+                var phoneElement = document.getElementById('phone');
+                var div = document.getElementById('vertical-line3');
+                if (phoneElement) {
+                    phoneElement.style.display = 'none'; // Скрыть элемент, если файла cookie нет
+                    div.style.display = 'none';
+                    image2.style.marginTop = '-540px'
+                    minus2.style.marginTop = '-305px'
+                    plus2.style.marginTop = '-305px'
+                    count2.style.marginTop = '-305px'
+                    price2.style.marginTop = '-259px'
+
+                    image.style.marginTop = '-550px'
+                    minus.style.marginTop = '-305px'
+                    plus.style.marginTop = '-305px'
+                    count.style.marginTop = '-305px'
+                    price.style.marginTop = '-259px'
+                }
+            }
+            var laptopCookieExists = checkCookie('laptop_cookie'); // Проверка наличия файла cookie
+            if (!laptopCookieExists) {
+                var laptopElement = document.getElementById('laptop');
+                var div = document.getElementById('vertical-line3');
+                if (laptopElement) {
+                    laptopElement.style.display = 'none';
+                    div.style.display = 'none';
+                    image.style.marginTop = '-550px'
+                    minus.style.marginTop = '-305px'
+                    plus.style.marginTop = '-305px'
+                    count.style.marginTop = '-305px'
+                    price.style.marginTop = '-259px'
+                }
+            }
+            var watchCookieExists = checkCookie('watch_cookie'); // Проверка наличия файла cookie
+            if (!watchCookieExists) {
+                var watchElement = document.getElementById('watch');
+                var div = document.getElementById('vertical-line3');
+                if (watchElement) {
+                    watchElement.style.display = 'none'; // Скрыть элемент, если файла cookie нет
+                    div.style.display = 'none';
+                }
+            }
+            if (!laptopCookieExists && !phoneCookieExists) {
+                var laptopElement = document.getElementById('laptop');
+                var div = document.getElementById('vertical-line3');
+                if (laptopElement) {
+                    laptopElement.style.display = 'none';
+                    div.style.display = 'none';
+                    div2.style.display = 'none';
+                    image.style.marginTop = '-820px'
+                    minus.style.marginTop = '-575px'
+                    plus.style.marginTop = '-575px'
+                    count.style.marginTop = '-575px'
+                    price.style.marginTop = '-525px'
+                }
+            }
+            if (!laptopCookieExists && !watchCookieExists) {
+                var laptopElement = document.getElementById('laptop');
+                var div = document.getElementById('vertical-line3');
+                if (laptopElement) {
+                    laptopElement.style.display = 'none';
+                    div.style.display = 'none';
+                    div2.style.display = 'none';
+                }
+            }
+            if (!phoneCookieExists && !watchCookieExists) {
+                var laptopElement = document.getElementById('laptop');
+                var div = document.getElementById('vertical-line3');
+                if (phoneElement) {
+                    phoneElement.style.display = 'none';
+                    div.style.display = 'none';
+                    div2.style.display = 'none';
+                }
+            }
+            if (!laptopCookieExists && !watchCookieExists && !phoneCookieExists) {
+                var h21 = document.getElementById('h21');
+                var div3 = document.getElementById('vertical-line');
+                if (laptopElement) {
+                    h21.style.display = 'inline';
+                    div3.style.display = 'none';
+                }
+            }
+        }
+        
+
+        function checkCookie(cookieName) {
+            var cookies = document.cookie.split(';'); // Получить все файлы cookie
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(cookieName) === 0) {
+                    return true; // Если файл cookie найден, вернуть true
+                }
+            }
+            return false; // Если файл cookie не найден, вернуть false
+        }
+    </script>
+
+
+    <div class="vertical-line" id="vertical-line"></div>
+
+    <div id = "phone" style="display: inline;">
+        <h1 class="iphone">IPHONE 15 PRO MAX</h1>
+        <h1 class="natural">256GB NATURAL</h1>
+        <h1 class="titanium">TITANIUM...</h1>
+        <button class = "minus" type="submit" onclick="minusCount(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); decrementCookie()">-</button>
+        <p class = "count"><span id="count">1</span></p>
+        <button class="plus" type="button" onclick="incrementCount(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); plusCookie()">+</button>
+        <h1 id="price" class="price">49 999 грн</h1>
+
+        <script>
+            //function getCookieValue(name) {
+            //    const value = `; ${document.cookie}`;
+            //    const parts = value.split(`; ${name}=`);
+            //    if (parts.length === 2) return parts.pop().split(';').shift();
+            //}
+//
+            //// Пример использования
+            //const cookieName = 'phone';
+            //const cookieValue = getCookieValue(cookieName);
+            //var pon = document.getElementById('count');
+            //pon.textContent = cookieValue
+
+            function plusCookie(){
+                document.cookie = `phone=1; path = /`;
+                var i = parseInt(getCookie("phone")) || 1; // Получаем текущее значение куки
+                i = i + 1; // Увеличиваем значение на 1
+                document.cookie = `phone=${i}; path = /`; // Устанавливаем новое значение куки
+                if (i === 0) {
+                    deleteCookie("phone"); // Удаляем куки, если значение равно 0
+                }
+            }
+        
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            function decrementCookie(){
+                var i = parseInt(getCookie("phone")) || 1; // Получаем текущее значение куки
+                if (i > 0) { // Уменьшаем значение на 1 только если оно больше 0
+                    i = i - 1; // Уменьшаем значение на 1
+                    document.cookie = `phone=${i}; path = /`; // Устанавливаем новое значение куки
+                }
+            }
+
+            function getDecrementCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            function minusCount() {
+                var countSpan = document.getElementById('count');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    if (currentCount > 0) { // Проверка, что текущее значение больше нуля
+                        countSpan.textContent = currentCount - 1;
+                    }
+            }
+            }
+            function incrementCount() {
+                var countSpan = document.getElementById('count');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    countSpan.textContent = currentCount + 1;
+                }
+            }
+        </script>
+        <img class="image" src="../../static/registration_page/images/phone.jpg" alt="">
+    </div>
+
+
+    <div id="vertical-line2" class="vertical-line2"></div>
+
+    <div id="laptop">
+        <h1 class="macbook">APPLE MACBOOK</h1>
+        <h1 class="space">PRO 13" SPACE</h1>
+        <h1 class="gray">GRAY M2 8/256...</h1>
+        <button class = "minus2" id = "minus2" type="submit" onclick="minusCount2(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); decrementCookie2()">-</button>
+        <p class = "count2" id = "count2"><span id="count2">1</span></p>
+        <button class = "plus2" id = "plus2" type="submit" onclick="incrementCount2(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); plusCookie2()">+</button>
+        <h1 id = "price2" class="price2">54 999 грн</h1>
+    
+        <script>
+            //function getCookieValue2(name) {
+            //    const value = `; ${document.cookie}`;
+            //    const parts = value.split(`; ${name}=`);
+            //    if (parts.length === 2) return parts.pop().split(';').shift();
+            //}
+//
+            //// Пример использования
+            //const cookieName2 = 'phone';
+            //const cookieValue2 = getCookieValue2(cookieName2);
+            //var pon2 = document.getElementById('count2');
+            //pon2.textContent = cookieValue2
+            function plusCookie2(){
+                document.cookie = `laptop=1; path = /`;
+                var i = parseInt(getCookie("laptop")) || 1; // Получаем текущее значение куки
+                i = i + 1; // Увеличиваем значение на 1
+                document.cookie = `laptop=${i}; path = /`; // Устанавливаем новое значение куки
+            }
+        
+            function getCookie2(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            function decrementCookie2(){
+                var i = parseInt(getCookie("laptop")) || 1; // Получаем текущее значение куки
+                if (i > 0) { // Уменьшаем значение на 1 только если оно больше 0
+                    i = i - 1; // Уменьшаем значение на 1
+                    document.cookie = `laptop=${i}; path = /`; // Устанавливаем новое значение куки
+                }
+            }
+
+            function getDecrementCookie2(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            function minusCount2() {
+                var countSpan = document.getElementById('count2');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    if (currentCount > 0) { // Проверка, что текущее значение больше нуля
+                        countSpan.textContent = currentCount - 1;
+                    }
+            }
+            }
+            function incrementCount2() {
+                var countSpan = document.getElementById('count2');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    countSpan.textContent = currentCount + 1;
+                }
+            }
+        </script>
+    <img id="image2" class="image2" src="../../static/registration_page/images/laptop.png" alt="">
+    </div>
+
+
+    <div class="vertical-line3" id="vertical-line3"></div>
+
+    <div id = "watch">
+        <h1 class="watch">APPLE WATCH</h1>
+        <h1 class="ultra">ULTRA 49MM</h1>
+        <h1 class="apple">TITANIUM...</h1>
+        <button class = "minus3" id = "minus3" type="submit" onclick="minusCount3(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); decrementCookie3()">-</button>
+        <p class = "count3" id="count3"><span id="count3">1</span></p>
+        <button class = "plus3" id = "plus3" type="submit" onclick="incrementCount3(); productCount(); sigmaCount(); productCount2(); gigachadCount(); sigmagigachadCount(); plusCookie3()">+</button>
+        <h1 id = "price3" class="price3">28 999 грн</h1>
+    
+        <script>
+            //function getCookieValue3(name) {
+            //    const value = `; ${document.cookie}`;
+            //    const parts = value.split(`; ${name}=`);
+            //    if (parts.length === 2) return parts.pop().split(';').shift();
+            //}
+            //var watchCookieExists = checkCookie('watch');
+            //if (watchCookieExists){
+            //    const cookieName3 = 'watch';
+            //    const cookieValue3 = getCookieValue3(cookieName3);
+            //    var pon3 = document.getElementById('count3');
+            //    pon3.textContent = cookieValue3
+            //}
+            
+            
+            function plusCookie3(){
+                document.cookie = `watch=1; path = /`;
+                var i = parseInt(getCookie("watch")) || 1; // Получаем текущее значение куки
+                i = i + 1; // Увеличиваем значение на 1
+                document.cookie = `watch=${i}; path = /`; // Устанавливаем новое значение куки
+            }
+        
+            function getCookie3(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+
+            function decrementCookie3(){
+                var i = parseInt(getCookie("watch")) || 1; // Получаем текущее значение куки
+                if (i > 0) { // Уменьшаем значение на 1 только если оно больше 0
+                    i = i - 1; // Уменьшаем значение на 1
+                    document.cookie = `watch=${i}; path = /`; // Устанавливаем новое значение куки
+                }
+            }
+
+            function getDecrementCookie3(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
+            function minusCount3() {
+                var countSpan = document.getElementById('count3');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    if (currentCount > 0) { // Проверка, что текущее значение больше нуля
+                        countSpan.textContent = currentCount - 1;
+                    }
+            }
+            }
+            function incrementCount3() {
+                var countSpan = document.getElementById('count3');
+                if (countSpan) {
+                    var currentCount = parseInt(countSpan.textContent);
+                    countSpan.textContent = currentCount + 1;
+                }
+            }
+        </script>
+        <img class="image3" id = "image3" src="../../static/registration_page/images/watch.png" alt="">
+    </div>
+
+    <button id="cookieButton" style="display: none;" class = "counter" type="submit"></button>
+    <p><span class="product" id= "product" style="display: inline;"></span></p>
+    <script>
+        function getCookieCount() {
+            var cookies = document.cookie.split(';').filter(function(cookie) {
+                return cookie.trim() !== "";
+            });
+            return cookies.length;
+        }
+        
+        // Функция для отображения количества куки-файлов
+        function productCount() {
+            var cookieCount = getCookieCount(); // Получаем количество куки-файлов
+        
+            var productSpan = document.getElementById('product'); // Элемент для отображения количества куки-файлов
+            var button = document.getElementById('cookieButton'); // Кнопка, которая может зависеть от наличия куки-файлов
+        
+            if (productSpan) {
+                if (cookieCount <= 0) {
+                    productSpan.style.display = 'none';
+                    button.style.display = 'none';
+                } else {
+                    productSpan.style.display = 'inline';
+                    button.style.display = 'inline';
+                    productSpan.textContent = cookieCount; // Отображаем количество куки-файлов
+                }
+            }
+        }
+        productCount();
+    </script>
+    <button class = "design" type="submit">ПЕРЕЙТИ ДО ОФОРМЛЕННЯ</button>
+    <h2 class="sum"><span id= "spanSum">0 товарів на суму</span></h2>
+    <span class="spanSum" id= "spanAllSum">0</span>
+    <h1 class="grn">грн</h1>
+    <h2 class="discount">Знижка</h2>
+    <span class="spanSum2" id= "spanId">0</span>
+    <h1 class="grn2">грн</h1>
+    <h1 class = "generalsum">Загальна сума</h1>
+    <span class="spanSum3" id= "spanId2">0</span>
+    <h1 class="grn3">грн</h1>
+    <script>
+        function sigmaCount() {
+            var countSpan = parseInt(document.getElementById('count').textContent);
+            var countSpan2 = parseInt(document.getElementById('count2').textContent);
+            var countSpan3 = parseInt(document.getElementById('count3').textContent);
+            //var countPrice = parseInt(document.getElementById('price').textContent);
+            //var countPrice2 = parseInt(document.getElementById('price2').textContent);
+            //var countPrice3 = parseInt(document.getElementById('price3').textContent);
+                
+            var sum = countSpan + countSpan2 + countSpan3;
+                
+            var productSpan = document.getElementById('spanSum');
+            if (productSpan) {
+                if (sum == 0) {
+                    productSpan.style.display = 'inline';
+                    productSpan.textContent = '0 товарів на суму';
+                }
+                if (sum == 1) {
+                    productSpan.style.display = 'inline';
+                    productSpan.textContent = '1 товар на суму';
+                }
+                if (sum == 2) {
+                    productSpan.style.display = 'inline';
+                    productSpan.textContent = '2-а товари на суму';
+                }
+                if (sum >= 3) {
+                    productSpan.style.display = 'inline';
+                    productSpan.textContent = sum + '-и товари на суму';
+                }
+            }
+        }
+        
+        // Вызов функции сразу после её создания
+        sigmaCount();
+        function productCount2() {
+            var countSpan = parseInt(document.getElementById('count').textContent);
+        var countSpan2 = parseInt(document.getElementById('count2').textContent);
+        var countSpan3 = parseInt(document.getElementById('count3').textContent);
+        //var countPrice = parseInt(document.getElementById('price').textContent);
+        //var countPrice2 = parseInt(document.getElementById('price2').textContent);
+        //var countPrice3 = parseInt(document.getElementById('price3').textContent);
+
+        var sum = countSpan * 49999 + countSpan2 * 54999 + countSpan3 * 28999;
+
+        var productSpan = document.getElementById('spanAllSum');
+        if (productSpan) {
+            productSpan.style.display = 'inline';
+            productSpan.textContent = sum;
+            }
+        }
+        productCount2();
+        function gigachadCount() {
+        var countSpan = parseInt(document.getElementById('spanAllSum').textContent);
+        var laptopCookieExists = checkCookie('laptop_cookie');
+        var phoneCookieExists = checkCookie('phone_cookie');
+        var watchCookieExists = checkCookie('watch_cookie');
+
+        if(phoneCookieExists && !laptopCookieExists && !watchCookieExists){
+            var sum = countSpan * 0.0566;
+        }
+        if(!phoneCookieExists && laptopCookieExists && !watchCookieExists){
+            var sum = countSpan * 0.0317;
+        }
+        if(!phoneCookieExists && !laptopCookieExists && watchCookieExists){
+            var sum = countSpan * 0.0645;
+        }
+        if(phoneCookieExists && laptopCookieExists && watchCookieExists){
+            var sum = countSpan * 0.1528;
+        }
+        if(phoneCookieExists && laptopCookieExists && !watchCookieExists){
+            var sum = countSpan * 0.0883;
+        }
+        if(phoneCookieExists && !laptopCookieExists && watchCookieExists){
+            var sum = countSpan * 0.1211;
+        }
+        if(!phoneCookieExists && laptopCookieExists && watchCookieExists){
+            var sum = countSpan * 0.0962;
+        }
+
+        var productSpan = document.getElementById('spanId');
+        if (productSpan) {
+            productSpan.style.display = 'inline';
+            productSpan.textContent = parseInt(sum);
+            }
+        }
+        gigachadCount();
+        function sigmagigachadCount() {
+        var countSpan = parseInt(document.getElementById('spanAllSum').textContent);
+        var countSpan2 = parseInt(document.getElementById('spanId').textContent);
+        //var countPrice = parseInt(document.getElementById('price').textContent);
+        //var countPrice2 = parseInt(document.getElementById('price2').textContent);
+        //var countPrice3 = parseInt(document.getElementById('price3').textContent);
+
+        var sum = countSpan - countSpan2;
+
+        var productSpan = document.getElementById('spanId2');
+        if (productSpan) {
+            productSpan.style.display = 'inline';
+            productSpan.textContent = parseInt(sum);
+            }
+        }
+        sigmagigachadCount();
+    </script>
+{% endblock %}
