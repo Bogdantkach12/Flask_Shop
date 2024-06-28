@@ -136,7 +136,7 @@ instance_path.
 
 ### Settings:
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_1.png "Main app")
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_1.png "Settings")
 
 1. Імпортуємо модулі flask, flask_sqlalchemy, flask_migrate, os/ Imported modules flask, flask_sqlalchemy, flask_migrate, os.
 2. Створюємо додаток від классу Flask і задаємо параметри: import_name, template_folder, 
@@ -148,9 +148,13 @@ instance_path.
 
 ### Login_manage:
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_4.png "Main app")
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_4.png "Login_manage")
 
 1. Імпортуємо flask_login, наш головний додаток та модель User/ Import flask_login, our main application, and the User model.
-2. Задаємо додатку таємний ключ і створюємо login_manager від классу LoginManager та задаємо параметр **app** туди указуємо наш додаток.
-3. Отримуємо користувача за допомогою декоратора: @login_manager.user_loader.
-4. Створюємо функцію де отримуємо id користувача.
+2. Задаємо додатку таємний ключ і створюємо login_manager від классу LoginManager та задаємо параметр **app** туди указуємо наш додаток/ We assign a secret key to the application and create a login_manager from the LoginManager class and set the parameter **app** and specify our application there.
+3. Отримуємо користувача за допомогою декоратора: @login_manager.user_loader/ We get the user using the decorator: @login_manager.user_loader.
+4. Створюємо функцію де отримуємо id користувача/ We create a function where we get the user id.
+
+### Mail_config:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_5.png "Mail_config")
