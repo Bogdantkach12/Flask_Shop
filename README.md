@@ -217,40 +217,72 @@ Data in the most common types of modern databases are usually stored as rows and
 
 Sqlite3 - це найпростіший і найперший модуль для роботи з базами данних, тому ми і обрали саме його/ it is the simplest and the first module for working with databases, which is why we chose it.
 
-### Яку роль виконує id у таблицях бази даних.
+### Яку роль виконує id у таблицях бази даних/ What is the role of id in database tables.
 
-ID у таблицях бази даних виконує роль унікального ідентифікатора кожного запису (або рядка) в таблиці. Ось основні ролі та функції ID у базах даних:
+ID у таблицях бази даних виконує роль унікального ідентифікатора кожного запису (або рядка) в таблиці. Ось основні ролі та функції ID у базах даних:/ An ID in database tables acts as a unique identifier for each record (or row) in the table. Here are the main roles and functions of IDs in databases:
 
-1. Унікальність: ID забезпечує унікальність кожного запису в таблиці. Жоден інший запис не може мати той самий ID, що й інший запис у тій самій таблиці.
+1. Унікальність: ID забезпечує унікальність кожного запису в таблиці. Жоден інший запис не може мати той самий ID, що й інший запис у тій самій таблиці/ Uniqueness: ID ensures the uniqueness of each record in the table. No other record can have the same ID as another record in the same table.
 
-2. Первинний ключ (Primary Key): Зазвичай ID використовується як первинний ключ. Первинний ключ однозначно ідентифікує кожен запис у таблиці і дозволяє швидко знаходити, оновлювати та видаляти конкретні записи.
+2. Первинний ключ (Primary Key): Зазвичай ID використовується як первинний ключ. Первинний ключ однозначно ідентифікує кожен запис у таблиці і дозволяє швидко знаходити, оновлювати та видаляти конкретні записи/ Primary Key: ID is usually used as the primary key. A primary key uniquely identifies each record in a table and allows you to quickly find, update, and delete specific records.
 
-3. Зв'язки між таблицями: ID часто використовується для створення зв'язків між таблицями. Наприклад, у реляційних базах даних можна використовувати ID як зовнішній ключ (Foreign Key), щоб зв'язати записи з різних таблиць. Це дозволяє підтримувати цілісність даних і забезпечує референціальну цілісність.
+3. Зв'язки між таблицями: ID часто використовується для створення зв'язків між таблицями. Наприклад, у реляційних базах даних можна використовувати ID як зовнішній ключ (Foreign Key), щоб зв'язати записи з різних таблиць. Це дозволяє підтримувати цілісність даних і забезпечує референціальну цілісність/ Relationships between tables: ID is often used to create relationships between tables. For example, in relational databases, you can use an ID as a foreign key (Foreign Key) to link records from different tables. This allows you to maintain data integrity and ensures referential integrity.
 
-## Опис кожного файлу views:
+## Опис кожного файлу views:/ Description of each views file:
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_12.png "views1")
 
-Це views сторінки admin, весь код прокоментований на зображенні.
+Це views сторінки admin, весь код прокоментований на зображенні/ These are views of the admin page, all the code is commented on the image.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_13.png "views2")
 
-Це views сторінки cart, весь код прокоментований на зображенні.
+Це views сторінки cart, весь код прокоментований на зображенні/ These are views of the cart page, all the code is commented on the image.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_14.png "views3")
 
-Це views сторінки home, весь код прокоментований на зображенні.
+Це views сторінки home, весь код прокоментований на зображенні/ These are views of the home page, all the code is commented on the image.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_15.png "views4")
 
-Це views сторінки authorization, весь код прокоментований на зображенні.
+Це views сторінки authorization, весь код прокоментований на зображенні/ These are the views of the authorization page, all the code is commented on the image.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_16.png "views5")
 
-Це views сторінки registration, весь код прокоментований на зображенні.
+Це views сторінки registration, весь код прокоментований на зображенні/ These are views of the registration page, all the code is commented on the image.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_17.png "views6")
 
-Це views сторінки shop, весь код прокоментований на зображенні.
+Це views сторінки shop, весь код прокоментований на зображенні/ These are views of the shop page, all the code is commented on the image.
 
 ## Опис Всього коду JS:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_19.png "js1")
+
+Це приклад отримання кількості cookie файлів на сторінці, це ми робимо на кожній сторінці, тому не буду повторюватися/ This is an example of getting the number of cookies on a page, we do this on every page, so I won't repeat myself.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_20.png "js2")
+
+Це приклад модального вікна при успішній авторизації/ This is an example of a modal window with successful authorization.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_21.png "js3")
+
+Це приклад перевірки паролів, якщо не співпадають, то ми не можемо натиснути на кнопку Send, якщо все правильно, з'являється модальне вікно/ This is an example of checking passwords, if they do not match, then we cannot click the Send button, if everything is correct, a modal window appears.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_22.png "js4")
+
+Це приклад зміни зображення на сторінці Shop, на других товарах ми просто змінюємо назву/ This is an example of changing the image on the Shop page, on other products we simply change the name.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_23.png "js5")
+
+Це приклад завантаження змін на сторінках Shop та Admin/ This is an example of uploading changes to the Shop and Admin pages.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_24.png "js6")
+
+Це приклад зміни знижки та картинки на сторінці Admin/ This is an example of changing the discount and image on the Admin page.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_25.png "js7")
+
+Це приклад додавання та віднімання кількості товару на сторінці Cart/ This is an example of adding and subtracting product quantities on the Cart page.
+
+# Висновок/ Conclusion:
+
+### Нам було дуже цікаво робити проект, на цьому проекті ми навчилися створювати веб додатки, працювати з файлами CSS, HTML, JS та навчилися працювати з фреймворком flask, для новачків цей проект буже дуже корисним та цікавим, гарного вивчення проекту та до побачення/ We had a lot of fun doing the project, on this project we learned to create web applications, work with CSS, HTML, JS files and learned to work with the flask framework, for beginners this project is very useful and interesting, have a good study of the project and bye.
