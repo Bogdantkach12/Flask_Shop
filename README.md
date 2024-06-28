@@ -2,6 +2,7 @@
 
 ## Склад нашої команди/The composition of our team:
 
+Ткач Богдан - https://github.com/Bogdantkach12
 
 Нікіта Емріх - https://github.com/NikitaEmrih
 
@@ -102,3 +103,4 @@ module for creating our bot
 **shop_page** - цей застосунок відповідає за сторінку магазину на якій ми можемо замовити товари/ this application is responsible for the store page where we can order goods.
 
 **static** - цей застосунок відповідає за файли CSS, JS та зображення
+
