@@ -123,3 +123,11 @@ instance_path.
 1. Імпортуємо flask/ import flask.
 2. Створюємо blueprint від классу Blueprint/ We create a blueprint from the Blueprint class.
 3. Задаємо параметри: **name** - указуємо ім'я blueprint, **import_name** - указуємо назву додатку, **template_folder** - указуємо путь до папки templates/ We set the parameters: **name** - specify the name of the blueprint, **import_name** - specify the name of the application, **template_folder** - specify the path to the templates folder.
+
+## Спосіб налаштування Blueprint у файлі urls/ Blueprint setup method in urls file.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_3.png "Blueprint urls")
+
+1. Імпортуємо головний додаток, наш blueprint та функцію із views/ We import the main application, our blueprint and the function from views.
+2. До blueprint додаємо **add_url_rule**, а там указуємо параметр **rule**, **view_ func** де указуємо нашу функцію та **methods**/ We add **add_url_rule** to the blueprint, and there we specify the parameter **rule**, **view_ func** where we specify our function and **methods**.
+3. До головного додатку примінюємо **register_blueprint** і указуємо там наш blueprint/ Apply **register_blueprint** to the main application and specify our blueprint there.
