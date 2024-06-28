@@ -104,3 +104,14 @@ module for creating our bot
 
 **static** - цей застосунок відповідає за файли CSS, JS та зображення
 
+## Приклад створення головного додатку/ An example of creating a main application:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_1.png "Main app")
+
+1. Імпортуємо модулі flask, flask_sqlalchemy, flask_migrate, os/ Imported modules flask, flask_sqlalchemy, flask_migrate, os.
+2. Створюємо додаток від классу Flask і задаємо параметри: import_name, template_folder, 
+instance_path/ We create an add-on in the Flask class and set the parameters: import_name, template_folder, 
+instance_path.
+3. Робимо конфігурацію з базою данних/ We make the configuration with the database.
+4. Створюємо базу данних від классу SQLAlchemy і задаємо **параметр app**, де указуємо наш додаток/ We create a database from the SQLAlchemy class and set the **app parameter**, where we specify our application.
+5. Створюємо міграції і задаємо параметри **app та db** де указуємо додаток та базу данних, яку ми створили/ We create migrations and set the parameters **app and db** where we specify the application and the database we created.
