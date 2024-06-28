@@ -66,4 +66,3 @@ module for creating our bot
 5. На сторінці Web в розділі Code - Working directory встановити путь до папки з проектом/ On the Web page in the Code - Working directory section, set the path to the folder with the project.
 6. Перезавантажити додаток і все готово/ Reload the app and you're done.
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_18.png "Structure of project")
