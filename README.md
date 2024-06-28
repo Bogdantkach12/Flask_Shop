@@ -24,12 +24,44 @@
 
 ### Всі модулі які ми використовували під час роботи з проектом/All the modules we used while working with the project:
 
-    flask
-    flask_login
-    flask_migrate
-    flask_sqlalchemy
-    flask_mail
-    telebot
-    sqlite3
-    jinja2
-    os
+**flask** - це фреймворк для створення веб-застосунків мовою програмування Python/ is a framework for creating web applications in the Python programming language
+
+**flask_login** - цей додаток використовується, щоб авторизувати користувача та для перевірки його на авторизацію та адміна/ this application is used to authorize the user and to check it for authorization and admin
+
+**flask_migrate** - обробляє міграцію бази даних для додатків Flask/ completes database migration for Flask add-ons
+
+**flask_sqlalchemy** - це для представлення користувальницької моделі та інтерфейсу з нашою базою даних/ this is to represent the user model and interface with our database
+
+**flask_mail** - дозволяє легко відправляти електронні листи з вашої програми/ Allows you to easily send electronic sheets from your program
+
+**telebot** - модуль для створення нашого бота/
+module for creating our bot
+
+**sqlite3** - база даних яка не має сервера і дозволяє зберігати всю базу локально на одному пристрої/ The database does not require a server and allows you to save the entire database locally on one device
+
+**jinja2** - дозволяє підставляти змінні з Python прямо на сторінки в браузері/ allows you to place variables from Python directly on pages in the browser
+
+**UserMixin** - Додавання аутентифікації до вашої програми за допомогою Flask-Login/ Adding authentication to your application with Flask-Login
+
+**os** - забезпечують управління та взаємодію систем комп'ютера між собою/ provide control and interaction of computer systems among themselves
+
+### Стисла інструкція по запуску проекта локально та віддаленно/ Concise instructions for launching the project locally and remotely:
+
+**Щоб запустити наш проект локально, потрібно перейти в файл manage.py, відкрити термінал та написати команду/To run our project locally, you need to go to the manage.py file, open a terminal and write a command:**
+
+**На Windows**:
+
+    python manage.py
+
+**На macOS**:
+
+    python3 manage.py
+
+**Щоб запустити наш проект віддаленно(на pythonanywhere) потрібно/To run our project remotely (on pythonanywhere) you need:**
+
+1. Авторизуватися на сайті pythonanywhere і підтвердити пошту/ Log in to the pythonanywhere website and confirm your email
+2. Перейти на сторінку Web і додати веб-додаток(написати імя свого файлу)/ Go to the Web page and add the web add-on(write the name of your file)
+3. Перейти на сторінку Consoles і додати bash console там створити віртуальне оточення/ Go to the Consoles page and add bash console there to create a virtual environment : **python -m venv _ім'я оточення_**, та встановити всі потрібні модулі/ and install all required modules.
+4. Далі потрібно перейти в папку mysite та командою **git clone** завантажити проект/ Then you need to go to the mysite folder and use the **git clone** command to download the project.
+5. На сторінці Web в розділі Code - Working directory встановити путь до папки з проектом/ On the Web page in the Code - Working directory section, set the path to the folder with the project.
+6. Перезавантажити додаток і все готово/ Reload the app and you're done.
