@@ -165,3 +165,31 @@ instance_path.
 4. shop_app.config['MAIL_USE_TLS'] = True
 5. shop_app.config['MAIL_USERNAME'] = 'your_email'
 6. shop_app.config['MAIL_PASSWORD'] = 'your_pssword'
+
+## Приклади форм HTML та для чого вони потрібні:/ Examples of HTML forms and what they are for:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_6.png "Registration")
+
+Це форма для реєстрації користувача в яку тобі потрібно ввести ім'я, пошту, пароль та підтвердити його/ This is a user registration form in which you need to enter your name, email, password and confirm it.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_7.png "Authorization")
+
+Це форма для авторизації в яку тобі потрібно ввести або логін, або пошту та пароль, якщо все співпадає то ти авторизований/ This is a form for authorization in which you need to enter either a login, or email and password, if everything matches, then you are authorized.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_8.png "Cart")
+
+Це форма в корзині під час оформлення заказу, в яку тобі потрібно ввести ім'я, прізвище, телефон, пошту, місто, відділення нової пошти та, якщо потрібно, додаткові побажання/ This is a form in the shopping cart during checkout, in which you need to enter your first name, last name, phone number, post office, city, branch of the new post office and, if necessary, additional wishes.
+
+## Опис файлів models:/ Description of models files:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_9.png "Model1")
+
+Цей файл models потрібен для реєстрації користувачів, він створює стовпці логіну, пошти, пароля та його підтвердження/ This models file is required for user registration, it creates columns for login, mail, password and its confirmation.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_10.png "Model2")
+
+Цей файл models потрібен для оформлення замовлення, він створює стовпці ім'я, прізвище, телефон, пошту, місто, відділення нової пошти та додаткові побажання/ This models file is required for placing an order, it creates the columns name, surname, phone, mail, city, branch of the new mail and additional wishes.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_11.png "Model3")
+
+Цей файл models потрібен для продуктів у магазині, він створює стовпці ім'я продукту, ціну, знижку, та нову ціну зі знижкою.
