@@ -192,4 +192,4 @@ instance_path.
 
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_11.png "Model3")
 
-Цей файл models потрібен для продуктів у магазині, він створює стовпці ім'я продукту, ціну, знижку, та нову ціну зі знижкою.
+Цей файл models потрібен для продуктів у магазині, він створює стовпці ім'я продукту, ціну, знижку, та нову ціну зі знижкою/ This models file is required for products in the store, it creates columns product name, price, discount, and new price with discount.
