@@ -193,3 +193,64 @@ instance_path.
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_11.png "Model3")
 
 Цей файл models потрібен для продуктів у магазині, він створює стовпці ім'я продукту, ціну, знижку, та нову ціну зі знижкою/ This models file is required for products in the store, it creates columns product name, price, discount, and new price with discount.
+
+## Як провести міграції у проекті:/ How to perform migrations in the project:
+
+1. Створюємо новий термінал і переходимо в папку з головним додатком/ We create a new terminal and go to the folder with the main application.
+2. Пишемо команду flask --app settings db init/ We write the command flask --app settings db init.
+3. Далі пишемо команду flask --app settings db migrate/ but write the command flask --app settings db migrate.
+4. І пишемо останню команду flask --app settings db upgrade/ And we write the last command flask --app settings db upgrade.
+
+## Чому саме sqlite3? / Why sqlite3?
+
+### Що таке база данних:
+
+База даних - це впорядкований набір структурованої інформації або даних, які зазвичай зберігаються в електронному вигляді комп'ютерної системи. База даних зазвичай управляється системою управління базами даних (СУБД). Дані разом із СУБД, а також додатки, які з ними пов'язані, називаються системою баз даних, або, для стислості, просто базою даних.
+
+Дані у найпоширеніших типах сучасних баз даних зазвичай зберігаються як рядків і стовпців формують таблицю. Цими даними можна легко керувати, змінювати, оновлювати, контролювати та впорядковувати. У більшості баз даних для запису та запитів даних використовується мова структурованих запитів (SQL).
+
+A database is an ordered collection of structured information or data, usually stored electronically on a computer system. A database is usually managed by a database management system (DBMS). The data together with the DBMS, as well as the applications associated with them, is called a database system, or, for brevity, simply a database.
+
+Data in the most common types of modern databases are usually stored as rows and columns forming a table. This data can be easily managed, changed, updated, monitored and organized. Most databases use Structured Query Language (SQL) to record and query data.
+
+### Чому саме sqlite3/ Why sqlite3:
+
+Sqlite3 - це найпростіший і найперший модуль для роботи з базами данних, тому ми і обрали саме його/ it is the simplest and the first module for working with databases, which is why we chose it.
+
+### Яку роль виконує id у таблицях бази даних.
+
+ID у таблицях бази даних виконує роль унікального ідентифікатора кожного запису (або рядка) в таблиці. Ось основні ролі та функції ID у базах даних:
+
+1. Унікальність: ID забезпечує унікальність кожного запису в таблиці. Жоден інший запис не може мати той самий ID, що й інший запис у тій самій таблиці.
+
+2. Первинний ключ (Primary Key): Зазвичай ID використовується як первинний ключ. Первинний ключ однозначно ідентифікує кожен запис у таблиці і дозволяє швидко знаходити, оновлювати та видаляти конкретні записи.
+
+3. Зв'язки між таблицями: ID часто використовується для створення зв'язків між таблицями. Наприклад, у реляційних базах даних можна використовувати ID як зовнішній ключ (Foreign Key), щоб зв'язати записи з різних таблиць. Це дозволяє підтримувати цілісність даних і забезпечує референціальну цілісність.
+
+## Опис кожного файлу views:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_12.png "views1")
+
+Це views сторінки admin, весь код прокоментований на зображенні.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_13.png "views2")
+
+Це views сторінки cart, весь код прокоментований на зображенні.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_14.png "views3")
+
+Це views сторінки home, весь код прокоментований на зображенні.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_15.png "views4")
+
+Це views сторінки authorization, весь код прокоментований на зображенні.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_16.png "views5")
+
+Це views сторінки registration, весь код прокоментований на зображенні.
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_17.png "views6")
+
+Це views сторінки shop, весь код прокоментований на зображенні.
+
+## Опис Всього коду JS:
