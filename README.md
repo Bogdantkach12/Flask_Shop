@@ -131,3 +131,26 @@ instance_path.
 1. Імпортуємо головний додаток, наш blueprint та функцію із views/ We import the main application, our blueprint and the function from views.
 2. До blueprint додаємо **add_url_rule**, а там указуємо параметр **rule**, **view_ func** де указуємо нашу функцію та **methods**/ We add **add_url_rule** to the blueprint, and there we specify the parameter **rule**, **view_ func** where we specify our function and **methods**.
 3. До головного додатку примінюємо **register_blueprint** і указуємо там наш blueprint/ Apply **register_blueprint** to the main application and specify our blueprint there.
+
+## Опис файлів settings, login_manage, mail_config:Description of settings, login_manager, mail_config files:
+
+### Settings:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_1.png "Main app")
+
+1. Імпортуємо модулі flask, flask_sqlalchemy, flask_migrate, os/ Imported modules flask, flask_sqlalchemy, flask_migrate, os.
+2. Створюємо додаток від классу Flask і задаємо параметри: import_name, template_folder, 
+instance_path/ We create an add-on in the Flask class and set the parameters: import_name, template_folder, 
+instance_path.
+3. Робимо конфігурацію з базою данних/ We make the configuration with the database.
+4. Створюємо базу данних від классу SQLAlchemy і задаємо **параметр app**, де указуємо наш додаток/ We create a database from the SQLAlchemy class and set the **app parameter**, where we specify our application.
+5. Створюємо міграції і задаємо параметри **app та db** де указуємо додаток та базу данних, яку ми створили/ We create migrations and set the parameters **app and db** where we specify the application and the database we created.
+
+### Login_manage:
+
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_4.png "Main app")
+
+1. Імпортуємо flask_login, наш головний додаток та модель User/ Import flask_login, our main application, and the User model.
+2. Задаємо додатку таємний ключ і створюємо login_manager від классу LoginManager та задаємо параметр **app** туди указуємо наш додаток.
+3. Отримуємо користувача за допомогою декоратора: @login_manager.user_loader.
+4. Створюємо функцію де отримуємо id користувача.
