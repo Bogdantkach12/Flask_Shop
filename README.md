@@ -2,7 +2,7 @@
 
 ## Склад нашої команди/The composition of our team:
 
-Ткач Богдан - https://github.com/Bogdantkach12
+**Ткач Богдан(Team Lead)** - https://github.com/Bogdantkach12
 
 Нікіта Емріх - https://github.com/NikitaEmrih
 
