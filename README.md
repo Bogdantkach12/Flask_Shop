@@ -70,7 +70,7 @@ module for creating our bot
 
 ## Структура проекту/ Project structure:
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_18.png "Structure of project")**Щоб запустити наш проект віддаленно(на pythonanywhere) потрібно/To run our project remotely (on pythonanywhere) you need:**
+**Щоб запустити наш проект віддаленно(на pythonanywhere) потрібно/To run our project remotely (on pythonanywhere) you need:**
 
 1. Авторизуватися на сайті pythonanywhere і підтвердити пошту/ Log in to the pythonanywhere website and confirm your email
 2. Перейти на сторінку Web і додати веб-додаток(написати імя свого файлу)/ Go to the Web page and add the web add-on(write the name of your file)
