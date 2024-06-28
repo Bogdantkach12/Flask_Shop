@@ -19,3 +19,17 @@
 ## Чому проект корисний для нашої команди/Why the project is useful for our team
 
 #### Наш проект корисний для нас, як для новачків у цьому напрямку тим, що ми навчилися працювати з HTML CSS та JS і створювати повноцінні веб-додатки, наш проект має всі необхідні можливості для створення повноцінного вебсайту для замовника, тому будь-яка людина може зайти на наш проект ознайомитися з ним і написати свій веб-додаток/ Our project is useful for us as newbies in this field because we have learned how to work with HTML CSS and JS and create full web applications, our project has all the full capabilities to create a complete website for a customer, so any person can go to our project, familiarize yourself with it and write your web application.
+
+## Як можна приступити до роботи з нашим проектом/How to start working with our project
+
+### Всі модулі які ми використовували під час роботи з проектом/All the modules we used while working with the project:
+
+    flask
+    flask_login
+    flask_migrate
+    flask_sqlalchemy
+    flask_mail
+    telebot
+    sqlite3
+    jinja2
+    os
