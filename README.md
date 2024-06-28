@@ -70,4 +70,35 @@ module for creating our bot
 
 ## Структура проекту/ Project structure:
 
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_18.png "Structure of project")**Щоб запустити наш проект віддаленно(на pythonanywhere) потрібно/To run our project remotely (on pythonanywhere) you need:**
+
+1. Авторизуватися на сайті pythonanywhere і підтвердити пошту/ Log in to the pythonanywhere website and confirm your email
+2. Перейти на сторінку Web і додати веб-додаток(написати імя свого файлу)/ Go to the Web page and add the web add-on(write the name of your file)
+3. Перейти на сторінку Consoles і додати bash console там створити віртуальне оточення/ Go to the Consoles page and add bash console there to create a virtual environment : **python -m venv _ім'я оточення_**, та встановити всі потрібні модулі/ and install all required modules.
+4. Далі потрібно перейти в папку mysite та командою **git clone** завантажити проект/ Then you need to go to the mysite folder and use the **git clone** command to download the project.
+5. На сторінці Web в розділі Code - Working directory встановити путь до папки з проектом/ On the Web page in the Code - Working directory section, set the path to the folder with the project.
+6. Перезавантажити додаток і все готово/ Reload the app and you're done.
+
+# Опис найважливіших частин проекту/ Description of the most important parts of the project:
+
+## Структура проекту/ Project structure:
+
 ![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_18.png "Structure of project")
+
+**admin_page** - цей застосунок відповідає за сторінку адміна на нашому сайті, там ми можемо змінювати товари/ This link indicates the admin page on our website, where we can change products.
+
+**bot_app** - цей застосунок відповідає за нашого бота, там ми можемо отримувати всі продукти, всіх користувачів та додавати товари/ This link is indicative of our bot, where we can pick up all products, all customers and add goods
+
+**cart_page** - цей застосунок відповідає за корзину користувача, там ви можете обирати кількість товарів та оформити заказ, у випадку якщо ви помилились ви можете відмінити заказ/ this application is responsible for the user's shopping cart, there you can choose the number of products and complete the order, in case you made a mistake, you can cancel the order
+
+**home_page** - цей застосунок відповідає за нашу головну сторінку, спочатку там є тільки реєстрація та авторизація, а потім вже і магазин і корзина/ This link represents our main page, initially there is only registration and authorization, and then the store and cart.
+
+**login_page** - цей застосунок відповідає за авторизацію користувача/ This sign confirms the authorization of the accountant.
+
+**registration_page** - цей застосунок відповідає за реєстрацію користувача/ This document confirms the registration of the accountant.
+
+**shop** - це головний застосунок, в якому ми налаштовуємо наш проект, створюємо базу даних та міграції, і підключаємо всі сторінки/ This is the main step in which we set up our project, create a database and migration, and connect all the pages.
+
+**shop_page** - цей застосунок відповідає за сторінку магазину на якій ми можемо замовити товари/ this application is responsible for the store page where we can order goods.
+
+**static** - цей застосунок відповідає за файли CSS, JS та зображення
