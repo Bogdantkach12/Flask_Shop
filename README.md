@@ -233,7 +233,8 @@ ID у таблицях бази даних виконує роль унікал�
 
 Це views сторінки admin, весь код прокоментований на зображенні/ These are views of the admin page, all the code is commented on the image.
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_13.png "views2")
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_30.png "views2")
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_31.png "views8")
 
 Це views сторінки cart, весь код прокоментований на зображенні/ These are views of the cart page, all the code is commented on the image.
 
