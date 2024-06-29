@@ -157,14 +157,17 @@ instance_path.
 
 ### Mail_config:
 
-![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_5.png "Mail_config")
+![alt text](https://github.com/Bogdantkach12/Flask_Shop/blob/main/Flask_Shop/static/registration_page/image/Screenshot_32.png "Mail_config")
 
 1. Імпортуємо наш головний додаток та із flask_mail імпортуємо Mail, Message
-2. shop_app.config['MAIL_SERVER'] = 'your_mail_server'
+2. shop_app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 3. shop_app.config['MAIL_PORT'] = 587
-4. shop_app.config['MAIL_USE_TLS'] = True
-5. shop_app.config['MAIL_USERNAME'] = 'your_email'
-6. shop_app.config['MAIL_PASSWORD'] = 'your_pssword'
+4. shop_app.config['MAIL_USE_TLS'] = True  # Используйте TLS для безопасности
+5. shop_app.config['MAIL_USERNAME'] = 'your_email@gmail.com'
+6. shop_app.config['MAIL_PASSWORD'] = 'your_password'
+7. shop_app.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'
+8. mail = Mail(shop_app)
+
 
 ## Приклади форм HTML та для чого вони потрібні:/ Examples of HTML forms and what they are for:
 
